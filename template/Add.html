@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Add Book</title>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 flex items-center justify-center">
+
+    <div class="w-full max-w-lg px-6">
+
+        <div class="bg-white rounded-2xl shadow-2xl p-8">
+
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">
+                📚 Add New Book
+            </h1>
+
+            <p class="text-center text-gray-500 mb-8">
+                Fill in the details to add a new book.
+            </p>
+
+            <form method="post" class="space-y-6">
+
+                {% csrf_token %}
+
+                <!-- Book Name -->
+                <div>
+                    <label class="block mb-2 font-semibold text-gray-700">
+                        Book Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter book name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                    >
+                </div>
+
+                <!-- Author -->
+                <div>
+                    <label class="block mb-2 font-semibold text-gray-700">
+                        Author
+                    </label>
+
+                    <input
+                        type="text"
+                        name="author"
+                        placeholder="Enter author name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                    >
+                </div>
+
+                <!-- Year -->
+                <div>
+                    <label class="block mb-2 font-semibold text-gray-700">
+                        Publication Year
+                    </label>
+
+                    <input
+                        type="number"
+                        name="year"
+                        placeholder="2026"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                    >
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex gap-4 pt-4">
+
+                    <button
+                        type="submit"
+                        class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold shadow-lg transition duration-300">
+                        Save Book
+                    </button>
+
+                    <a
+                        href="/"
+                        class="flex-1 text-center bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-xl font-semibold transition duration-300">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
